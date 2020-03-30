@@ -6,6 +6,8 @@
     box-sizing: border-box;
 
 }
+
+
 body {
 
     height: 100vh;
@@ -21,11 +23,13 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;   /* change alighn item to alighn content. we want to  align the content */
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5,100px);
+
+    grid-template-columns: repeat(4, 75px);/*  it has four columns which  are 75px */
+    grid-template-rows: minmax(120px, auto) repeat(5,100px);  /* FIVE ROWS. WE DEFINE THE MINUMUM ROWS WHICH ARE 120PX THE MAXIMUM ARE AUTO */
     min-height: 100vh;
 }
 
+/* designing the buttons */
 .calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
@@ -33,13 +37,20 @@ body {
     outline: none;
     background-color: rgba(255, 255, 255, .75);
 }
+
+
 .calculator-grid > button:hover {
     background-color: rgba(255, 255, 255, .9);
 }
 
+/* designing AC and = */
+
 .span-two {
     grid-column: span 2;
 }
+
+/* styling the screen  */
+
 .output {
     grid-column: 1/ -1;
     background-color: rgba(0, 0, 0, .75);
@@ -53,12 +64,22 @@ body {
 
 }
 
+
 .output .previous-operand {
     color: rgba(255, 255, 255, .75);
     font-size: 1.5rem;
 }
 
+
 .output .current-operand {
     color: white;
     font-size: 2.5rem;
+}
+@media only screen and (min-width: 600px) {
+
+    .calculator-grid {
+        
+        grid-template-columns: repeat(4, 100px);/*  changed to 100px otherwise the columns were so small for big screens */ 
+    }
+
 }
