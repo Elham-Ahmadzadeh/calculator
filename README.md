@@ -1,2 +1,2 @@
 # calculator
-a beautiful calculator for basic features
+a simple calculator for basic features
