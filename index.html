@@ -7,33 +7,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="app">
 <section class="calculator-grid">
     <div class="output">
       
         <article class="previous-operand"></article>
-        <article class="current-operand"></article>
+        <article class="current-operand">{{ current || '0' }}</article>
     </div>
-    <button class="span-two">AC</button>
-    <button class="delete">DEL</button>
-    <button class="keyOperator">/</button>
-    <button class="buttons">1</button>
-    <button class="buttons">2</button>
-    <button class="buttons">3</button>
-    <button class="keyOperator" >*</button>
-    <button class="buttons">4</button>
-    <button class="buttons">5</button>
-    <button class="buttons">6</button>
-    <button class="keyOperator" >+</button>
-    <button class="buttons">7</button>
-    <button class="buttons">8</button>
-    <button class="buttons">9</button>
-    <button class="keyOperator" >-</button>
-    <button class="keyOperator" >.</button>
-    <button class="buttons">0</button>
-    <button class="span-two">=</button>
+    <button @click="clear" class="span-two">AC</button>
+    <button @click="clear" class="delete">DEL</button>
+    <button @click="divide" class="keyOperator">/</button>
+    <button @click="append('1')" cclass="buttons">1</button>
+    <button @click="append('2')" class="buttons">2</button>
+    <button @click="append('3')" class="buttons">3</button>
+    <button @click="times" class="keyOperator" >*</button>
+    <button @click="append('4')" class="buttons">4</button>
+    <button @click="append('5')" class="buttons">5</button>
+    <button @click="append('6')" class="buttons">6</button>
+    <button @click="add" class="keyOperator" >+</button>
+    <button @click="append('7')" class="buttons">7</button>
+    <button @click="append('8')" class="buttons">8</button>
+    <button @click="append('9')" class="buttons">9</button>
+    <button @click="minus" class="keyOperator">-</button>
+    <button @click="dot('.')" class="keyOperator" >.</button>
+    <button @click="append('0')" class="buttons">0</button>
+    <button @click="equal" class="span-two">=</button>
 </section>
-
-
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
    <script type="module" src="js/app.js" defer></script> 
+
 </body>
 </html>
